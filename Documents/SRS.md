@@ -36,8 +36,8 @@
 
 ### 2.2 Интерфейс пользователя <a name="userInterface">
 Главная страница реализуемого проекта выглядит следующим образом:
-
-Cо всеми остальными мокапами можно ознакомиться [здесь](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/tree/master/Documents/Mockups)
+![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Mockups/mainView.png)
+Cо всеми остальными мокапами можно ознакомиться [здесь](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/tree/master/Documents/Mockups) <br>
 Для того, чтобы выложить объявление, пользователю необходимо зарегестрироваться. Для просмотра объявлений регистрация не нужна.
 
 ### 2.3 Характеристики пользователей
