@@ -38,7 +38,7 @@
 ### 2.2 Интерфейс пользователя <a name="userInterface">
 Главная страница реализуемого проекта выглядит следующим образом:
 ![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Mockups/mainView.png)
-Для того, чтобы выложить объявление, пользователю необходимо зарегестрироваться. Для просмотра объявлений регистрация не нужна. Страница регистрации выглядит следующим образом:
+Для того, чтобы подать объявление, пользователю необходимо зарегестрироваться. Для просмотра объявлений регистрация не нужна. Страница регистрации выглядит следующим образом:
 ![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Mockups/accountRegistration.png)
 Для подачи заявления на продажу необхожимо заполнить форму, в которой необходимо указать наименование товара, его стоимость, описание и контактную информацию. Это выглядит следующим образом:
 ![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Mockups/adSubmission.png)
