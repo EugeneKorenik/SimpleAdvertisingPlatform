@@ -15,7 +15,7 @@
    3.2 [Нефункциональные требования](#non-functionalRequirmets) <br>
      3.2.1 [Аттрибуты качества](#qualityAttributes) <br>
      3.2.1.1 [Внешние интерфейсы](#externalInterfaces) <br>
-     3.2.1.2 [Ограничения](#restrictions) 
+     3.2.1.2 [Ограничения](#restrictions) <br>
      3.2.1.3 [Бизнес-правила](#businesRules) <br>
 4. [Аналоги](#analogs) <br>
 
