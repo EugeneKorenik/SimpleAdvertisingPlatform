@@ -38,7 +38,7 @@
 <p align="justify">Главная страница реализуемого проекта выглядит следующим образом:
 </p>
 ![Фото](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Mockups/mainView.png)
-Cо всеми остальными мокапами можно ознакомиться [здесь](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/tree/master/Documents/Mockups)
+Cо всеми остальными мокапами можно ознакомиться [здесь](./Mockups)
 <p align="justify"> </p>
 <p align="justify">Для того, чтобы выложить объявление, пользователю необходимо зарегестрироваться. Для просмотра объявлений регистрация не нужна.</p>
 
