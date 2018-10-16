@@ -16,6 +16,8 @@
 
 <a name="precedents"></a>
 ### 1. Диаграмма прецедентов
+Диаграмма прецендентов предствляет собой следующую схему:
+![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Use%20case/useCase.png)
 
 <a name="actors"></a>
 #### 1.1. Актеры
