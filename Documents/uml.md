@@ -152,4 +152,5 @@
 4. Конец.
 
 <a name="activity"> </a>
-### 2. Диаграммы активности рассмотрены в следующем докуменде [диаграммы активности](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Activities/activities.md).
+### 2. Диаграммы активности
+Диаграммы активности более подробно рассмотрены в следующем докуменде [диаграммы активности](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Activities/activities.md).
