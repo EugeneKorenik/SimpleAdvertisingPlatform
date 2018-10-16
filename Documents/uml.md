@@ -161,6 +161,8 @@
 
 <a name="sequenceDiagram"> </a>
 ### 3. Диаграммы последовательности
+
+<a name="createAndEntrance"> </a>
 #### 3.1. Регистрация и вход.
 Последовательность действий для регистрации и дальнейшего входа в аккаунт представлена на следующем рисунке.
 ![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Sequence/registrationAndEntrance.png)
@@ -168,7 +170,7 @@
 <a name="addAdvertSQ"> </a>
 #### 3.2. Подача объявления
 Последовательность действий для размещения объявления представлена ниже.
-![(https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Sequence/addAdvert.png)
+![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Sequence/addAdvert.png)
 
 <a name="editAndDeleteAccSQ"> </a>
 #### 3.2. Редактирование аккаунта и его удаление
