@@ -13,7 +13,7 @@
 1.2.8. [Удаление аккаунт](#deleteAccount) <br/>
 1.2.9. [Поиск](#search) <br/>
 1.2.10. [Выход из аккаунта](#singOut) <br/>
-2. [Диаграммы активности](#activities) <br/ >
+2. [Диаграммы активности](#activity) <br/>
 
 <a name="precedents"></a>
 ### 1. Диаграмма прецедентов
@@ -151,5 +151,5 @@
 3. Система возвращает пользователю главную старницу.
 4. Конец.
 
-<a name="activities> </a>
-### 2. Диаграммы активности рассмотрены в следующем докуменде [диаграммы активности](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Activities/activities.md);
+<a name="activity"> </a>
+### 2. Диаграммы активности рассмотрены в следующем докуменде [диаграммы активности](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Activities/activities.md).
