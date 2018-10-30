@@ -18,6 +18,9 @@
 3.1. [Регистрация и вход в аккаунт](#createAndEntrance) <br/>
 3.2. [Подача объявления](#addAdvertSQ) <br/>
 3.3. [Редактирование аккаунта и последующее его удаление](#editAndDeleteAccSQ)<br/>
+4. [Диаграмма состояния](#statement) <br/>
+5. [Диаграмма классов](#class) <br/>
+6. [Диаграмма развертывания](#deployment) <br/>
 
 <a name="precedents"></a>
 ### 1. Диаграмма прецедентов
@@ -176,3 +179,18 @@
 #### 3.2. Редактирование аккаунта и его удаление
 Последовательность действий для редактирования аккаунта и его удаления представлена ниже.
 ![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Sequence/registrationAndEntrance.png)
+
+<a name="statement"> </a>
+#### 4. Диаграмма состояний
+Диаграмма состояний для пользователя имеет следующий вид:
+![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Statement/statement.png)
+
+<a name="class"> </a>
+#### 5. Диаграмма классов
+Диаграмма классов выглядит следующим образом:
+![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Class/classDiagram.png)
+
+<a name="deployment"> </a>
+#### 6. Диаграмма развертывания
+Диаграмма развертывания для приложения представлена ниже:
+![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Deployment/deployment.png)
