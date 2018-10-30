@@ -183,7 +183,7 @@
 <a name="statement"> </a>
 #### 4. Диаграмма состояний
 Диаграмма состояний для пользователя имеет следующий вид:
-![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Statement/statement.png)
+![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Statement/statementFixed.png)
 
 <a name="class"> </a>
 #### 5. Диаграмма классов
