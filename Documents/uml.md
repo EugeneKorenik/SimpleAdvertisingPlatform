@@ -188,7 +188,7 @@
 <a name="class"> </a>
 #### 5. Диаграмма классов
 Диаграмма классов выглядит следующим образом:
-![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Class/classDiagram.png)
+![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Class/classDiagram1.png)
 
 <a name="deployment"> </a>
 #### 6. Диаграмма развертывания
