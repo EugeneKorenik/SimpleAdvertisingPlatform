@@ -193,4 +193,4 @@
 <a name="deployment"> </a>
 #### 6. Диаграмма развертывания
 Диаграмма развертывания для приложения представлена ниже:
-![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Deployment/deployment.png)
+![](https://github.com/EugeneKorenik/SimpleAdvertisingPlatform/blob/master/Documents/Deployment/deployment1.png)
