@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Account</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <form th:action="@{/}">
+                    <button class="btn btn-primary btn-lg" type="submit">Домой</button>
+                </form>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <form th:action="@{/toAddAdvertisement}">
+                    <button class="btn btn-primary btn-lg" type="submit">Добавить объявление</button>
+                </form>
+            </li>
+            <li>
+                <form th:action="@{/toAccount}">
+                    <button class="btn btn-primary btn-lg" type="submit">
+                        <span class="glyphicon glyphicon-user"></span>Аккаунт
+                    </button>
+                </form>
+            </li>
+
+            <li>
+                <form th:action="@{/signOut}" th:method="post">
+                    <button class="btn btn-primary btn-lg" type="submit">
+                        <span class="glyphicon glyphicon-log-out"></span>Выйти
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-4">
+            <h3>Редактирование аккаунта</h3> <span class="label label-success" th:text="${infoSuccess}"></span>
+            <form th:action="@{/updateInfo}" th:method="put" th:object="${actor}" class="our-form">
+                <div class="form-group">
+                    <input type="hidden" th:field="*{id}">
+                    <label for="fullname">ФИО:</label> <span class="label label-danger" th:errors="*{fullName}"></span>
+                    <input type="text" class="form-control" id="fullname" th:field="*{fullName}"
+                           pattern="^[А-Яа-я\w\s]{3,40}" title="Имя может содержать тольку буквы. Длина от 3 до 40 символов" required/>
+
+                    <label for="login">Логин:</label> <span class="label label-danger" th:errors="*{login}"></span>
+                    <input type="text" class="form-control" id="login" th:field="*{login}"
+                           pattern="^[\w\d]{3,16}" title="Логин может содержать только цифры и латинские буквы длина от 3 до 16 символов" required/>
+
+                    <label for="mail">Почта:</label> <span class="label label-danger" th:errors="*{mail}"></span>
+                    <input type="email" class="form-control" id="mail" th:field="*{mail}"
+                           title="Почта должна иметь вид xxx@yyy.zzz (mail@gmail.com)" required/>
+
+                    <label for="phone">Телефон:</label> <span class="label label-danger" th:errors="*{phone}"></span>
+                    <input type="tel" class="form-control" id="phone" th:field="*{phone}"
+                           pattern="^\+?\d{12}$" title="Номер телефона состоит из 12 цифр(+375299520342)" required/>
+
+                    <br/>
+                    <button type="submit" class="btn btn-primary btn-lg">Сохранить</button>
+                </div>
+            </form>
+            <form th:aciotn="@{/toMyAdvertisements}">
+                <div class="form-group">
+                    <button class="btn btn-primary btn-lg">Мои объявления</button>
+                </div>
+            </form>
+        </div>
+        <dic class="col-sm-4">
+            <h3>Изменение пароля</h3>
+            <form th:action="@{/updatePassword}" th:method="put" class="our-form">
+                <div class="form-group">
+                    <input type="hidden" th:name="id" th:value="${actor.getId()}">
+                    <label for="password">Пароль:</label> <span class="label label-danger" th:text="${passwordError}"></span>
+                    <span class="label label-success" th:text="${passwordSuccess}"></span>
+                    <input type="password" name="password" id="password" class="form-control"
+                           pattern="^[\d\wа-яА-я]{4,24}" title="Пароль может содержать только буквы и цфиры. Длина от 4 до 24 символов" required/>
+                    <label for="passwordA">Повторите пароль</label>
+                    <input type="password" name="passwordAgain" id="passwordA" class="form-control"
+                           pattern="^[\d\wа-яА-я]{4,24}" title="Пароль может содержать только буквы и цифры. Длина от 4 до 24 символов" required/> <br/>
+                    <button class="btn btn-primary btn-lg" type="submit">Изменить пароль</button>
+                </div>
+            </form>
+        </dic>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

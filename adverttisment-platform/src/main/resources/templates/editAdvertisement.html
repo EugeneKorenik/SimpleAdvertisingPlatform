@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="nav navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <form th:action="@{/}">
+                <button type="submit" class="btn btn-primary btn-lg">Домой</button>
+            </form>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <form th:action="@{/toAccount}">
+                    <button class="btn btn-primary btn-lg" type="submit">
+                        <span class="glyphicon glyphicon-user"></span>Аккаунт
+                    </button>
+                </form>
+            </li>
+
+            <li>
+                <form th:action="@{/signOut}" th:method="post">
+                    <button class="btn btn-primary btn-lg" type="submit">
+                        <span class="glyphicon glyphicon-log-out"></span>Выйти
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+
+        <div class="col-sm-6">
+            <h3>Создание объявления</h3>
+            <form th:action="@{/createAdvertisement}" th:object="${advertisement}" th:method="post" id="regId">
+                <div class="form-group">
+                    <input type="hidden" th:field="*{id}">
+                    <label for="name">Наименование</label>
+                    <input type="text" id="name" class="form-control" th:field="*{name}"/>
+
+                    <label for="short">Краткое описание</label>
+                    <textarea class="form-control" id="short" th:field="*{shortDescription}"></textarea>
+
+                    <label for="full">Полное описание</label>
+                    <textarea class="form-control" id="full" th:field="*{fullDescription}"></textarea>
+
+                    <label for="price">Стоимость</label>
+                    <input class="form-control" type="text" id="price" th:field="*{price}"/>
+                </div>
+            </form>
+            <form th:action="@{/toAccount}" id="toMain">
+            </form>
+            <form th:action="@{/deleteAdvertisement}" th:method="delete" id="delete">
+            </form>
+
+            <div class="btn-group">
+                <button type="submit" form="regId" class="btn btn-primary btn-lg">Создать</button>
+                <button type="submit" form="toMain" class="btn btn-primary btn-lg">Отмена</button>
+                <button type="submit" form="delete" class="btn btn-danger btn-lg">Удалить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

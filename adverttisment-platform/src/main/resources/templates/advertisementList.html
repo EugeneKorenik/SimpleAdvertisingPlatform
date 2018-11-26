@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="nav navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <form th:action="@{/}">
+                <button type="submit" class="btn btn-primary btn-lg">Домой</button>
+            </form>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right" th:if="${role!=null}">
+            <li>
+                <form th:action="@{/toAddAdvertisement}">
+                    <button class="btn btn-primary btn-lg" type="submit">Добавить объявление</button>
+                </form>
+            </li>
+            <li>
+                <form th:action="@{/toAccount}">
+                    <button class="btn btn-primary btn-lg" type="submit">Аккаунт</button>
+                </form>
+            </li>
+            <li>
+                <form th:action="@{/signOut}" method="post">
+                    <button class="btn btn-primary btn-lg" type="submit">
+                        <span class="glyphicon glyphicon-log-out"></span>Выйти
+                    </button>
+                </form>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right" th:if="${role==null}">
+            <li>
+                <form th:action="@{/toRegistration}">
+                    <button class="btn btn-primary btn-lg" type="submit">
+                        <span class="glyphicon glyphicon-user"></span>Регистрация</button>
+                </form>
+            </li>
+            <li>
+                <form th:action="@{/toAuthorization}">
+                    <button class="btn btn-primary btn-lg" type="submit">
+                        <span class="glyphicon glyphicon-log-in"></span>Вход</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <h3>Список объявлений</h3>
+        <div class="col-sm-10">
+            <ul th:each="advertisement: ${advertisements}" class="list-group">
+                <li style="background-color: lightblue" class="list-group-item">
+                    <form th:action="@{/toConcreteAdvert}">
+                        <div class="panel panel-default">
+                            <input type="hidden" name="id" th:value="${advertisement.getId()}">
+                            <div class="panel-heading" th:text="${advertisement.getName()}"></div>
+                            <div class="panel-body">
+                                <div th:text="${advertisement.getShortDescription()}"></div>
+                                <div th:text="${'Цена: '+ advertisement.getPrice()}"></div>
+                                <button type="submit" class="btn btn-success">К объявлению</button>
+                            </div>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

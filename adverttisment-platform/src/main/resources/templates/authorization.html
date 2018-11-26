@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title> Authorization </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<nav class="nav navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <form th:action="@{/}">
+                <button type="submit" class="btn btn-primary btn-lg">Домой</button>
+            </form>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <form th:action="@{/toRegistration}">
+                    <button class="btn btn-primary btn-lg" type="submit">
+                        <span class="glyphicon glyphicon-user"></span>Регистрация
+                    </button>
+                </form>
+            </li>
+            <li>
+                <form th:action="@{/toAuthorization}">
+                    <button class="btn btn-primary btn-lg" type="submit">
+                        <span class="glyphicon glyphicon-log-in"></span>Вход
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-4">
+            <form th:action="@{/signIn}" th:method="post" th:object="${actor}" class="our-form">
+                <h3>Авторизация</h3>
+                <div class="form-group">
+                    <label for="login">Логин:</label> <span th:text="${message}" class="label label-danger"></span>
+                    <input type="text" class="form-control" id="login" th:field="*{login}">
+                    <label for="password">Пароль:</label>
+                    <input type="password" class="form-control" id="password" th:field="*{password}"><br/>
+                    <button type="submit" class="btn btn-primary btn-lg">Вход</button>
+                </div>
+            </form>
+            <form th:action="@{/}">
+                <button type="submit" class="btn btn-primary btn-lg">Отмена</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

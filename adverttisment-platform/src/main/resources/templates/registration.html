@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="nav navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <form th:action="@{/}">
+                <button type="submit" class="btn btn-primary btn-lg">Домой</button>
+            </form>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <form th:action="@{/toRegistration}">
+                    <button class="btn btn-primary btn-lg" type="submit">
+                        <span class="glyphicon glyphicon-user"></span>Регистрация
+                    </button>
+                </form>
+            </li>
+            <li>
+                <form th:action="@{/toAuthorization}">
+                    <button class="btn btn-primary btn-lg" type="submit">
+                        <span class="glyphicon glyphicon-log-in"></span>Вход
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+
+        <div class="col-sm-6">
+            <form th:action="@{/registration}" th:object="${actorForm}" th:method="post" id="regId">
+                <div class="form-group">
+                    <h3>Регистрация</h3>
+                    <label for="fullname">ФИО</label>
+                    <input type="text" class="form-control" id="fullname" th:field="*{fullName}" />
+
+                    <label for="login">Логин</label>
+                    <input type="text" class="form-control" id="login" th:field="*{login}" />
+
+                    <label for="password">Пароль</label>
+                    <input type="password" class="form-control" id="password" th:field="*{password}"/>
+
+                    <label for="passwordA">Повторите пароль</label>
+                    <input type="password" class="form-control" id="passwordA" th:field="*{passwordAgain}"/>
+
+                    <label for="email">Почта</label>
+                    <input type="email" class="form-control" id="email" th:field="*{mail}"/>
+
+                    <label for="tel">Номер телефона</label>
+                    <input type="tel" class="form-control" id="tel" th:field="*{phone}"/>
+                </div>
+            </form>
+            <form th:action="@{/}" id="toMain">
+            </form>
+
+            <div class="btn-group">
+                <button type="submit" form="regId" class="btn btn-primary">Регистрация</button>
+                <button type="submit" form="toMain" class="btn btn-primary">Отмена</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
