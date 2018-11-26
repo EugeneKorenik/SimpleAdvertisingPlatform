@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Main page</title>
+    <title>Registration</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
@@ -54,23 +54,40 @@
 
 <div class="container">
     <div class="row">
-        <h3>Список объявлений</h3>
-        <div class="col-sm-10" style="background-color: ghostwhite">
-            <ul th:each="advertisement: ${advertisements}" class="list-group">
-                <li style="background-color: lightblue" class="list-group-item">
-                    <form th:action="@{/toConcreteAdvertisement}">
-                        <div class="panel panel-default">
-                            <input type="hidden" name="id" th:value="${advertisement.getId()}">
-                            <div class="panel-heading" th:text="${advertisement.getName()}"></div>
-                            <div class="panel-body">
-                                <div th:text="${advertisement.getShortDescription()}"></div>
-                                <div th:text="${'Цена: '+ advertisement.getPrice()}"></div>
-                                <button type="submit" class="btn btn-success">К объявлению</button>
-                            </div>
-                        </div>
-                    </form>
-                </li>
-            </ul>
+        <div class="col-sm-1">
+        </div>
+
+        <div class="col-sm-6">
+            <h3>Просмотр объявления</h3>
+            <form th:action="@{/editAdvertisement}" th:object="${advertisement}" th:method="put" id="adForm">
+                <div class="form-group">
+                    <label for="name">Наименование</label>
+                    <input type="text" id="name" class="form-control" th:field="*{name}" th:readonly="${user == null}"/>
+
+                    <label for="short">Краткое описание</label>
+                    <textarea class="form-control" id="short" th:field="*{shortDescription}" th:readonly="${user == null}"></textarea>
+
+                    <label for="full">Полное описание</label>
+                    <textarea class="form-control" id="full" th:field="*{fullDescription}" th:readonly="${user == null}"></textarea>
+
+                    <label for="price">Стоимость</label>
+                    <input class="form-control" type="text" id="price" th:field="*{price}" th:readonly="${user == null}"/>
+                </div>
+            </form>
+            <form th:action="@{/}" id="toMain">
+            </form>
+
+            <div class="btn-group">
+                <button th:if="${user != null}" type="submit" form="adForm" class="btn btn-primary btn-lg">Сохранить</button>
+                <button type="submit" form="toMain" class="btn btn-primary btn-lg">Вернуться</button>
+            </div>
+
+            <form th:action="@{/deleteAdvertisement}" th:method="delete" th:if="${user != null}">
+                <div class="form-group">
+                    <input type="hidden" th:name="id" th:value="${advertisement.getId()}"/>
+                    <button class="btn btn-danger btn-lg">Удалить объявление</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

@@ -31,12 +31,14 @@ public class AdvertisementController {
     }
 
     @GetMapping("/toMyAdvertisements")
-    public ModelAndView toUserAdvertisements(HttpServletRequest request) {
-        long userId = (long) request.getSession().getAttribute("userId");
+    public ModelAndView toMyAdvertisementList(HttpServletRequest request) {
+        long userId = (long)request.getSession().getAttribute("userId");
         Actor actor = actorService.findEntityById(userId);
+        List<Advertisement> advertisements = actor.getAdvertisementList();
+
         ModelAndView model = new ModelAndView("advertisementList");
         model.addObject("role", actor.getRole());
-        model.addObject("advertisementList", actor.getAdvertisementList());
+        model.addObject("advertisements", advertisements);
         return model;
     }
 
@@ -72,13 +74,27 @@ public class AdvertisementController {
         return new ModelAndView("redirect:/toMyAdvertisements");
     }
 
-    @DeleteMapping
-    public ModelAndView deleteAdvertisement(@RequestParam long id) {
+    @DeleteMapping("/deleteAdvertisement")
+    public ModelAndView deleteAdvertisement(@RequestParam long id, HttpServletRequest request) {
         service.deleteById(id);
         return new ModelAndView("redirect:/toMyAdvertisements");
     }
 
-    public ModelAndView toContcreteAdvert() {
-
+    @GetMapping("/toConcreteAdvertisement")
+    public ModelAndView toConcreteAdvertisement(@RequestParam long id, HttpServletRequest request) {
+        ModelAndView model = new ModelAndView("concreteAdvertisement");
+        if(request.getSession().getAttribute("userId") != null) {
+            Actor actor = actorService.findEntityById((long) request.getSession().getAttribute("userId"));
+            List<Advertisement> advertisements = actor.getAdvertisementList();
+            for (int i = 0; i < advertisements.size(); i++) {
+                Advertisement advertisement = advertisements.get(i);
+                if (advertisement.getId() == id) {
+                    model.addObject("user", "true");
+                }
+            }
+            model.addObject("role", actor.getRole());
+        }
+        model.addObject("advertisement", service.findById(id));
+        return model;
     }
 }

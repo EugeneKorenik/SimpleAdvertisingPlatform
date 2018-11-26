@@ -1,5 +1,7 @@
 package by.bsuir.advertismentplatform.controller;
 
+import by.bsuir.advertismentplatform.entity.Actor;
+import by.bsuir.advertismentplatform.entity.Advertisement;
 import by.bsuir.advertismentplatform.form.ActorForm;
 import by.bsuir.advertismentplatform.service.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
